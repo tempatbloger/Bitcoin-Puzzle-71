@@ -3,7 +3,7 @@ Bitcoin Puzzle 71 - Auto Chunk Scanner
 Distributed private key scanner dengan sistem chunk otomatis dari Google Sheets 
 
 Alat berbasis web untuk memindai private key Bitcoin secara terdistribusi demi memecahkan Bitcoin Puzzle 71, dengan alamat target:
-1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU
+```1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU```
 
 Proyek ini memungkinkan banyak pengguna berpartisipasi secara bersamaan tanpa tumpang tindih, karena setiap worker otomatis mendapatkan chunk unik dari Google Sheets
 
