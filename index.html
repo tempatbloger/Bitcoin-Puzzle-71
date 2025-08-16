@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Bitcoin Puzzle 71 - Auto Chunk Reload</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Scanner otomatis ambil chunk dari Google Sheets">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="header">
+    <h1> Bitcoin Puzzle 71</h1>
+    <p><strong>Otomatis Ambil Chunk dari Google Sheets</strong></p>
+    <code>1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU</code>
+  </div>
+
+  <p>Scanner ini akan <strong>otomatis ambil chunk unik</strong> dari Google Sheets. Setelah selesai, akan ambil chunk baru.</p>
+
+  <div class="status">
+    <div> Worker ID: <code id="workerId">-</code></div>
+    <div> Chunk Saat Ini: <span id="currentChunk">Tidak ada</span></div>
+    <div> Progress Chunk: <div class="progress-bar"><div class="progress-fill" id="chunkProgress"></div></div></div>
+    <div> Matches: <span id="matchesCount">0</span></div>
+    <div> Durasi: <span id="elapsed">0s</span></div>
+    <div>Status: <span id="runState">idle</span></div>
+  </div>
+
+  <button id="startBtn" class="primary">Ambil Chunk & Mulai</button>
+  <button id="pauseBtn" disabled>Pause</button>
+  <button id="stopBtn" disabled>Stop</button>
+  <button id="foundBtn" class="success" disabled>Saya Menemukan!</button>
+
+  <h3> Log Aktivitas</h3>
+  <div id="log" class="log">.....</div>
+
+  <!-- Libraries -->
+  <script src="libs/elliptic.min.js"></script>
+  <script src="libs/crypto-js.min.js"></script>
+
+  <!-- Modules -->
+  <script src="js/utils.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

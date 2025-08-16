@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>?? Progress Puzzle 71</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 20px; max-width: 800px; }
+    .card { padding: 20px; border-radius: 10px; background: #f8f9fa; border: 1px solid #dee2e6; }
+    .loading { color: #666; }
+    .stat { font-size: 1.2em; margin: 8px 0; }
+    h1 { color: #0b84ff; }
+  </style>
+</head>
+<body>
+
+  <h1>Progress Puzzle 71</h1>
+
+  <div class="card">
+    <div class="stat">Total Chunks: <span id="total">Loading...</span></div>
+    <div class="stat">Selesai: <span id="done">-</span></div>
+    <div class="stat">Dalam Proses: <span id="taken">-</span></div>
+    <div class="stat">Tersisa: <span id="free">-</span></div>
+    <div class="stat">Progress: <span id="progress">-</span>%</div>
+  </div>
+
+  <p><em>Diperbarui otomatis dari Google Sheets.</em></p>
+
+  <script>
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyhXsXFoW4e3kHoa1zK_3MC9uYiqPdWvI7jQdbNHTVrCv0SfVViXnKYe3UTpiZQ_2yI_w/exec'; // GANTI INI!
+
+    async function loadStats() {
+      try {
+        const res = await fetch(`${GOOGLE_SCRIPT_URL}?action=getStats`);
+        const data = await res.json();
+
+        document.getElementById('total').textContent = data.total;
+        document.getElementById('done').textContent = data.done;
+        document.getElementById('taken').textContent = data.taken;
+        document.getElementById('free').textContent = data.free;
+        document.getElementById('progress').textContent = data.progress;
+
+        // Warna progress
+        const prog = parseFloat(data.progress);
+        document.getElementById('progress').style.color = prog > 50 ? '#2ecc71' : '#e67e22';
+
+      } catch (e) {
+        document.getElementById('total').textContent = 'Gagal muat';
+        console.error("Error fetching stats", e);
+      }
+    }
+
+    // Muat saat halaman dibuka
+    window.addEventListener('load', loadStats);
+
+    // Muat ulang tiap 30 detik
+    setInterval(loadStats, 30000);
+  </script>
+
+</body>
+</html>
