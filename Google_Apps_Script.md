@@ -136,7 +136,7 @@ function generateChunks() {
 
   // Gunakan string untuk angka besar — aman dari error parsing
   var START_HEX = "400000000000000000";  // 0x400...
-  var CHUNK_COUNT = 10000;                   // Uji 5 dulu
+  var CHUNK_COUNT = 5;                   // Uji 5 dulu
   var KEYS_PER_CHUNK = 1000000;          // 1 juta per chunk
 
   // Header
