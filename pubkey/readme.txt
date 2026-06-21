@@ -1,17 +1,21 @@
-# Instal Instal Dependensi:
-pip install -r requirements.txt
+========================================
+  VANITY.CPP - CARA MENJALANKAN
+========================================
 
-# Jalankan Skrip:
-python3 scanner.py
+1. COMPILE (cukup 1 kali):
+   g++ -std=c++17 -O3 -march=native -pthread vanity.cpp -lssl -lcrypto -o vanity
 
-1PWo3JeB9jrGwfHDNpdGK54CRas7fsVzXU
+2. JALANKAN:
+   ./vanity [ALAMAT] [THREAD]
 
+   Contoh:
+   ./vanity 1PWo3CV7wXnc3pPWVdbWYKKvPZUcBtLjsL 1
+   ./vanity 1PWo3CV7wXnc3pPWVdbWYKKvPZUcBtLjsL 2
+   ./vanity 1PWo3CV7wXnc3pPWVdbWYKKvPZUcBtLjsL 4
 
-node vanity.js 1PWo3 10
------------
-node vanity.js 1PW 10	Cari 10 alamat 1PW
-node vanity.js 1PWo 10	Cari 10 alamat 1PWo
-node vanity.js 1PWo3 5	Cari 5 alamat 1PWo3
-node vanity.js 1PWo3J 3	Cari 3 alamat 1PWo3J
+3. HASIL:
+   - Akan menampilkan x, pubkey, hash160, dan alamat
+   - Progress setiap 100.000 attempts
+   - Hash rate real-time
 
-----------
+========================================
